@@ -130,7 +130,7 @@ const translations = {
                 part2: "produits digitaux",
                 part3: "performants."
             },
-            description: "Je crée des expériences digitales exceptionnelles qui allient design innovant et performance technique."
+            description: "Nous créons des expériences digitales exceptionnelles qui allient design innovant et performance technique."
         },
         stats: {
             projects: "PROJETS",
@@ -304,7 +304,7 @@ const translations = {
         },
         about: {
             title: "Passionate about digital and innovation",
-            description: "I create digital products that combine aesthetics and functionality. My goal: bring your ideas to life with innovative technical solutions."
+            description: "We create digital products that combine aesthetics and functionality. My goal: bring your ideas to life with innovative technical solutions."
         },
         testimonial: {
             quote: "\"An exceptional developer who understood our needs and exceeded our expectations. The result is beautiful!\"",
