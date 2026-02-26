@@ -15,7 +15,24 @@
 <body>
     <div class="container">
         <nav>
-            <div class="logo" data-i18n="logo">Fandry Créa.</div>
+            <div class="logo" data-i18n="logo">
+                <svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Icône stylisée -->
+                    <path d="M20 30 L30 15 L40 30 L30 45 L20 30" fill="url(#gradient)" />
+                    <circle cx="30" cy="30" r="8" fill="white" fill-opacity="0.3" />
+                    
+                    <!-- Texte -->
+                    <text x="55" y="35" font-family="Inter" font-weight="800" font-size="28" fill="url(#gradient)">Fandry</text>
+                    <text x="140" y="35" font-family="Inter" font-weight="300" font-size="28" fill="#64748b">Créa</text>
+                    
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#4f46e5" />
+                            <stop offset="100%" stop-color="#7c3aed" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
             
 
             
@@ -35,8 +52,8 @@
                         <!-- Language Switcher -->
             <div class="language-switcher">
                 <!-- <button class="lang-btn active" onclick="changeLanguage('mg')" data-lang="mg">MG</button> -->
-                <button class="lang-btn" onclick="changeLanguage('fr')" data-lang="fr">FR</button>
                 <button class="lang-btn" onclick="changeLanguage('en')" data-lang="en">EN</button>
+                <button class="lang-btn" onclick="changeLanguage('fr')" data-lang="fr">FR</button>
             </div>
         </nav>
 
