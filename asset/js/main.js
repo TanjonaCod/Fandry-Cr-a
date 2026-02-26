@@ -246,7 +246,7 @@ const translations = {
                 part2: "digital products",
                 part3: "that perform."
             },
-            description: "I create exceptional digital experiences that combine innovative design with technical performance."
+            description: "We create exceptional digital experiences that combine innovative design with technical performance."
         },
         stats: {
             projects: "PROJECTS",
