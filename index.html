@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Fandry-Créa - Créateur d'expériences digitales</title>
+    <title>Fandry Créa - Services en slides</title>
+    
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="asset/css/style.css">
 </head>
 <body>
     <div class="container">
         <nav>
-            <div class="logo">Fandry-Créa.</div>
+            <div class="logo" data-i18n="logo">Fandry Créa.</div>
             
 
             
             <ul class="nav-links" id="navLinks">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                <li><a href="#work" data-i18n="nav.work">Work</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
             
-
             <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
+
+                        <!-- Language Switcher -->
+            <div class="language-switcher">
+                <!-- <button class="lang-btn active" onclick="changeLanguage('mg')" data-lang="mg">MG</button> -->
+                <button class="lang-btn" onclick="changeLanguage('fr')" data-lang="fr">FR</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" data-lang="en">EN</button>
+            </div>
         </nav>
 
         <section class="hero">
             <div class="hero-content">
-                <h1>Building digital <span>products</span> that perform.</h1>
-                <p>Je crée des expériences digitales exceptionnelles qui allient design innovant et performance technique.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-primary">Voir mes projets</button>
-                    <button class="btn btn-outline">En savoir plus</button>
-                </div>
+                <h1><span data-i18n="hero.title.part1">Building digital</span> <span data-i18n="hero.title.part2">products</span> <span data-i18n="hero.title.part3">that perform.</span></h1>
+                <p data-i18n="hero.description">Je crée des expériences digitales exceptionnelles qui allient design innovant et performance technique.</p>
             </div>
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Workspace" loading="lazy">
@@ -49,67 +55,142 @@
         <div class="stats">
             <div class="stat-item">
                 <h2>50+</h2>
-                <p>PROJETS</p>
+                <p data-i18n="stats.projects">PROJETS</p>
             </div>
             <div class="stat-item">
                 <h2>98%</h2>
-                <p>SATISFACTION</p>
+                <p data-i18n="stats.satisfaction">SATISFACTION</p>
             </div>
             <div class="stat-item">
                 <h2>5+</h2>
-                <p>ANS D'EXP</p>
+                <p data-i18n="stats.experience">ANS D'EXP</p>
             </div>
             <div class="stat-item">
                 <h2>20+</h2>
-                <p>CLIENTS</p>
+                <p data-i18n="stats.clients">CLIENTS</p>
             </div>
         </div>
     </div>
 
     <div class="container">
+        <!-- SECTION SERVICES EN SLIDES -->
         <section id="services" class="section">
             <div class="section-title">
-                <h2>Services</h2>
-                <p>Des solutions sur mesure pour vos projets digitaux</p>
+                <h2 data-i18n="services.title">Services</h2>
+                <p data-i18n="services.subtitle">Des solutions sur mesure pour vos projets digitaux</p>
             </div>
-            <div class="services">
-                <div class="card fade-in">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                    <p>Sites modernes, responsifs et performants avec les dernières technologies.</p>
+            
+            <!-- SLIDER SERVICES -->
+            <div class="services-slider">
+                <button class="slider-btn prev" onclick="prevServiceSlide()" aria-label="Service précédent">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="services-container">
+                    <div class="services-track" id="servicesTrack">
+                        <!-- Slide 1 - Web Development -->
+                        <div class="service-slide">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3 data-i18n="services.web.title">Web Development</h3>
+                                <p data-i18n="services.web.description">Sites modernes, responsifs et performants avec les dernières technologies.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 - Mobile Apps -->
+                        <div class="service-slide">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3 data-i18n="services.mobile.title">Mobile Apps</h3>
+                                <p data-i18n="services.mobile.description">Applications iOS et Android natives ou cross-platform avec Flutter et React Native.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 - Graphic & Brands -->
+                        <div class="service-slide">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-paint-brush"></i>
+                                </div>
+                                <h3 data-i18n="services.graphic.title">Graphic & Brands</h3>
+                                <p data-i18n="services.graphic.description">Identité visuelle, branding et design graphique pour marques mémorables.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 4 - Software Solutions -->
+                        <div class="service-slide">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <h3 data-i18n="services.software.title">Software Solutions</h3>
+                                <p data-i18n="services.software.description">Logiciels métier personnalisés pour optimiser vos processus d'entreprise.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 5 - E-commerce -->
+                        <div class="service-slide">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h3 data-i18n="services.ecommerce.title">E-commerce</h3>
+                                <p data-i18n="services.ecommerce.description">Boutiques en ligne performantes avec gestion de produits et paiements sécurisés.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 6 - SEO & Marketing -->
+                        <div class="service-slide">
+                            <div class="service-card">
+                                <div class="service-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3 data-i18n="services.seo.title">SEO & Marketing</h3>
+                                <p data-i18n="services.seo.description">Optimisation pour moteurs de recherche et stratégies marketing digital.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card fade-in">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Mobile Apps</h3>
-                    <p>Applications iOS et Android natives ou cross-platform.</p>
-                </div>
-                <div class="card fade-in">
-                    <i class="fas fa-cube"></i>
-                    <h3>Software Solutions</h3>
-                    <p>Logiciels métier personnalisés pour optimiser vos processus.</p>
+
+                <button class="slider-btn next" onclick="nextServiceSlide()" aria-label="Service suivant">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <div class="slider-dots" id="serviceDots">
+                    <span class="dot active" onclick="goToServiceSlide(0)"></span>
+                    <span class="dot" onclick="goToServiceSlide(1)"></span>
+                    <span class="dot" onclick="goToServiceSlide(2)"></span>
+                    <span class="dot" onclick="goToServiceSlide(3)"></span>
+                    <span class="dot" onclick="goToServiceSlide(4)"></span>
+                    <span class="dot" onclick="goToServiceSlide(5)"></span>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION PROJETS EN SLIDES -->
         <section id="work" class="section">
             <div class="section-title">
-                <h2>Réalisations récentes</h2>
-                <p>Découvrez mes derniers projets avec des illustrations animées</p>
+                <h2 data-i18n="projects.title">Réalisations récentes</h2>
+                <p data-i18n="projects.subtitle">Découvrez mes derniers projets</p>
             </div>
             
             <div class="projects-slider">
-                <button class="slider-btn prev" onclick="slidePrev()" aria-label="Projet précédent">
+                <button class="slider-btn prev" onclick="prevProjectSlide()" aria-label="Projet précédent">
                     <i class="fas fa-chevron-left"></i>
                 </button>
                 
                 <div class="projects-container">
                     <div class="projects-track" id="projectsTrack">
-                        <!-- Slide 1 - E-Commerce avec SVG animé -->
+                        <!-- Slides projets -->
                         <div class="project-slide">
                             <div class="project-item">
                                 <div class="project-box project1">
                                     <div class="svg-container">
-                                        <svg class="animated-svg float-animation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="animated-svg float-animation" viewBox="0 0 100 100">
                                             <circle cx="50" cy="50" r="40" fill="#4f46e5" opacity="0.2"/>
                                             <circle cx="50" cy="50" r="30" fill="#4f46e5" opacity="0.4"/>
                                             <circle cx="50" cy="50" r="20" fill="#4f46e5" opacity="0.6"/>
@@ -117,46 +198,40 @@
                                             <rect x="30" y="40" width="40" height="8" rx="4" fill="white"/>
                                             <rect x="35" y="52" width="30" height="8" rx="4" fill="white"/>
                                             <rect x="40" y="64" width="20" height="8" rx="4" fill="white"/>
-                                            <circle cx="35" cy="80" r="6" fill="white" class="pulse-animation"/>
-                                            <circle cx="65" cy="80" r="6" fill="white" class="pulse-animation"/>
                                         </svg>
                                     </div>
                                 </div>
                                 <div class="project-info">
-                                    <h4>E-Commerce Platform</h4>
-                                    <p>Plateforme de vente en ligne</p>
+                                    <h4 data-i18n="projects.ecommerce.title">E-Commerce Platform</h4>
+                                    <p data-i18n="projects.ecommerce.description">Plateforme de vente en ligne</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Slide 2 - Fitness Tracker avec SVG animé -->
                         <div class="project-slide">
                             <div class="project-item">
                                 <div class="project-box project2">
                                     <div class="svg-container">
-                                        <svg class="animated-svg bounce-animation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="animated-svg bounce-animation" viewBox="0 0 100 100">
                                             <circle cx="50" cy="40" r="20" fill="#10b981" opacity="0.3"/>
-                                            <path d="M30 70 L40 50 L50 60 L60 40 L70 70" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+                                            <path d="M30 70 L40 50 L50 60 L60 40 L70 70" stroke="white" stroke-width="4" fill="none"/>
                                             <circle cx="35" cy="30" r="5" fill="white"/>
                                             <circle cx="65" cy="30" r="5" fill="white"/>
-                                            <rect x="45" y="20" width="10" height="15" rx="5" fill="white" class="pulse-animation"/>
-                                            <circle cx="50" cy="75" r="8" fill="white" opacity="0.6"/>
                                         </svg>
                                     </div>
                                 </div>
                                 <div class="project-info">
-                                    <h4>Fitness Tracker</h4>
-                                    <p>Application de suivi sportif</p>
+                                    <h4 data-i18n="projects.fitness.title">Fitness Tracker</h4>
+                                    <p data-i18n="projects.fitness.description">Application de suivi sportif</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Slide 3 - Business Dashboard avec SVG animé -->
                         <div class="project-slide">
                             <div class="project-item">
                                 <div class="project-box project3">
                                     <div class="svg-container">
-                                        <svg class="animated-svg rotate-slow" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="animated-svg rotate-slow" viewBox="0 0 100 100">
                                             <rect x="20" y="30" width="15" height="40" rx="3" fill="white" opacity="0.8">
                                                 <animate attributeName="height" values="40;50;40" dur="2s" repeatCount="indefinite"/>
                                             </rect>
@@ -166,99 +241,46 @@
                                             <rect x="64" y="10" width="15" height="60" rx="3" fill="white">
                                                 <animate attributeName="height" values="60;70;60" dur="1.8s" repeatCount="indefinite"/>
                                             </rect>
-                                            <line x1="15" y1="80" x2="85" y2="80" stroke="white" stroke-width="2"/>
                                         </svg>
                                     </div>
                                 </div>
                                 <div class="project-info">
-                                    <h4>Business Dashboard</h4>
-                                    <p>Tableau de bord analytique</p>
-
+                                    <h4 data-i18n="projects.dashboard.title">Business Dashboard</h4>
+                                    <p data-i18n="projects.dashboard.description">Tableau de bord analytique</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <!-- Slide 4 - Agency Website avec SVG animé -->
                         <div class="project-slide">
                             <div class="project-item">
                                 <div class="project-box project4">
                                     <div class="svg-container">
-                                        <svg class="animated-svg pulse-animation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <svg class="animated-svg pulse-animation" viewBox="0 0 100 100">
                                             <rect x="20" y="30" width="60" height="40" rx="5" fill="white" opacity="0.2"/>
                                             <rect x="25" y="35" width="15" height="10" rx="2" fill="white"/>
                                             <rect x="45" y="35" width="15" height="10" rx="2" fill="white"/>
                                             <rect x="65" y="35" width="15" height="10" rx="2" fill="white"/>
-                                            <rect x="30" y="50" width="45" height="5" rx="2" fill="white"/>
-                                            <rect x="30" y="60" width="30" height="5" rx="2" fill="white"/>
-                                            <circle cx="50" cy="75" r="5" fill="white" class="pulse-animation"/>
                                         </svg>
                                     </div>
                                 </div>
                                 <div class="project-info">
-                                    <h4>Agency Website</h4>
-                                    <p>Site vitrine pour agence</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 5 - Food Delivery App avec SVG animé -->
-                        <div class="project-slide">
-                            <div class="project-item">
-                                <div class="project-box project5">
-                                    <div class="svg-container">
-                                        <svg class="animated-svg float-animation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="50" cy="40" r="20" fill="white" opacity="0.3"/>
-                                            <path d="M30 60 L45 45 L55 55 L70 40" stroke="white" stroke-width="4" fill="none"/>
-                                            <circle cx="35" cy="65" r="8" fill="white"/>
-                                            <circle cx="65" cy="65" r="8" fill="white"/>
-                                            <path d="M40 70 L60 70" stroke="white" stroke-width="4"/>
-                                            <circle cx="50" cy="30" r="5" fill="white" class="pulse-animation"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="project-info">
-                                    <h4>Food Delivery App</h4>
-                                    <p>Application de livraison</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Slide 6 - CRM Platform avec SVG animé -->
-                        <div class="project-slide">
-                            <div class="project-item">
-                                <div class="project-box project6">
-                                    <div class="svg-container">
-                                        <svg class="animated-svg rotate-animation" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                                            <circle cx="30" cy="40" r="15" fill="white" opacity="0.5"/>
-                                            <circle cx="70" cy="40" r="15" fill="white" opacity="0.5"/>
-                                            <circle cx="50" cy="60" r="15" fill="white" opacity="0.5"/>
-                                            <path d="M30 40 L50 60 M70 40 L50 60" stroke="white" stroke-width="3"/>
-                                            <circle cx="30" cy="40" r="5" fill="white" class="pulse-animation"/>
-                                            <circle cx="70" cy="40" r="5" fill="white" class="pulse-animation"/>
-                                            <circle cx="50" cy="60" r="5" fill="white" class="pulse-animation"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="project-info">
-                                    <h4>CRM Platform</h4>
-                                    <p>Gestion de relation client</p>
+                                    <h4 data-i18n="projects.agency.title">Agency Website</h4>
+                                    <p data-i18n="projects.agency.description">Site vitrine pour agence</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <button class="slider-btn next" onclick="slideNext()" aria-label="Projet suivant">
+                <button class="slider-btn next" onclick="nextProjectSlide()" aria-label="Projet suivant">
                     <i class="fas fa-chevron-right"></i>
                 </button>
 
-                <div class="slider-dots" id="sliderDots">
-                    <span class="dot active" onclick="goToSlide(0)"></span>
-                    <span class="dot" onclick="goToSlide(1)"></span>
-                    <span class="dot" onclick="goToSlide(2)"></span>
-                    <span class="dot" onclick="goToSlide(3)"></span>
-                    <span class="dot" onclick="goToSlide(4)"></span>
-                    <span class="dot" onclick="goToSlide(5)"></span>
+                <div class="slider-dots" id="projectDots">
+                    <span class="dot active" onclick="goToProjectSlide(0)"></span>
+                    <span class="dot" onclick="goToProjectSlide(1)"></span>
+                    <span class="dot" onclick="goToProjectSlide(2)"></span>
+                    <span class="dot" onclick="goToProjectSlide(3)"></span>
                 </div>
             </div>
         </section>
@@ -268,72 +290,55 @@
                 <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Developer" loading="lazy">
             </div>
             <div class="about-content">
-                <h2>Passionné par le digital et l'innovation</h2>
-                <p>Je crée des produits digitaux qui allient esthétique et fonctionnalité. Mon objectif : donner vie à vos idées avec des solutions techniques innovantes.</p>
-                <div class="skills">
-                    <span class="skill-tag">React</span>
-                    <span class="skill-tag">Node.js</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Next.js</span>
-                    <span class="skill-tag">Tailwind</span>
-                    <span class="skill-tag">MongoDB</span>
-                    <span class="skill-tag">Figma</span>
-                    <span class="skill-tag">UX/UI</span>
-                </div>
+                <h2 data-i18n="about.title">Passionné par le digital et l'innovation</h2>
+                <p data-i18n="about.description">Je crée des produits digitaux qui allient esthétique et fonctionnalité. Mon objectif : donner vie à vos idées avec des solutions techniques innovantes.</p>
             </div>
         </section>
     </div>
 
     <section class="testimonial">
         <div class="container">
-            <h2>"Un développeur exceptionnel qui a su comprendre nos besoins et dépasser nos attentes. Le résultat est magnifique !"</h2>
-            <p>— Sarah M., Directrice Marketing</p>
+            <h2 data-i18n="testimonial.quote">"Un développeur exceptionnel qui a su comprendre nos besoins et dépasser nos attentes. Le résultat est magnifique !"</h2>
+            <p data-i18n="testimonial.author">— Sarah M., Directrice Marketing</p>
         </div>
     </section>
 
     <div class="container">
         <section id="contact" class="section contact">
             <div class="contact-info">
-                <h2>Donnons vie à vos projets</h2>
-                <p>Vous avez une idée ? Discutons-en ! Je suis disponible pour échanger sur vos besoins et vous conseiller.</p>
+                <h2 data-i18n="contact.title">Donnons vie à vos projets</h2>
+                <p data-i18n="contact.subtitle">Vous avez une idée ? Discutons-en !</p>
                 
                 <div class="contact-details">
                     <div class="contact-detail-item">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <strong>Email</strong>
-                            <p>fandrycrea@gmail.com</p>
+                            <strong data-i18n="contact.email">Email</strong>
+                            <p>contact@Fandry Créa.com</p>
                         </div>
                     </div>
                     <div class="contact-detail-item">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <strong>Téléphone</strong>
-                            <p>+261 34 68 158 93</p>
-                        </div>
-                    </div>
-                    <div class="contact-detail-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <strong>Localisation</strong>
-                            <p>Madagascar, Antananarivo</p>
+                            <strong data-i18n="contact.phone">Téléphone</strong>
+                            <p>+33 6 12 34 56 78</p>
                         </div>
                     </div>
                 </div>
             </div>
 
             <form>
-                <h3 style="margin-bottom: 20px; font-size: clamp(20px, 4vw, 24px;">Envoyez un message</h3>
-                <input type="text" placeholder="Votre nom">
-                <input type="email" placeholder="Votre email">
+                <h3 data-i18n="contact.form.title">Envoyez un message</h3>
+                <input type="text" data-i18n-placeholder="contact.form.name" placeholder="Votre nom">
+                <input type="email" data-i18n-placeholder="contact.form.email" placeholder="Votre email">
                 <select>
-                    <option>Sélectionnez un service</option>
-                    <option>Développement Web</option>
-                    <option>Application Mobile</option>
-                    <option>Conseil / Audit</option>
+                    <option data-i18n="contact.form.select.default">Sélectionnez un service</option>
+                    <option data-i18n="contact.form.select.web">Développement Web</option>
+                    <option data-i18n="contact.form.select.mobile">Application Mobile</option>
+                    <option data-i18n="contact.form.select.design">Design</option>
                 </select>
-                <textarea rows="4" placeholder="Votre message"></textarea>
-                <button class="btn btn-primary" type="submit" style="width: 100%;">Envoyer le message</button>
+                <textarea rows="4" data-i18n-placeholder="contact.form.message" placeholder="Votre message"></textarea>
+                <button class="btn btn-primary" type="submit" style="width: 100%;" data-i18n="contact.form.submit">Envoyer</button>
             </form>
         </section>
     </div>
@@ -342,8 +347,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Fandry-Créa</h3>
-                    <p>Création d'expériences digitales innovantes et performantes.</p>
+                    <h3 data-i18n="footer.brand">Fandry-Créa</h3>
+                    <p data-i18n="footer.description">Création d'expériences digitales innovantes et performantes.</p>
                     <div class="social-links">
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -352,38 +357,38 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h3>Navigation</h3>
+                    <h3 data-i18n="footer.navigation">Navigation</h3>
                     <ul>
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#work">Projets</a></li>
-                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#" data-i18n="footer.home">Accueil</a></li>
+                        <li><a href="#services" data-i18n="footer.services">Services</a></li>
+                        <li><a href="#work" data-i18n="footer.projects">Projets</a></li>
+                        <li><a href="#about" data-i18n="footer.about">À propos</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Services</h3>
+                    <h3 data-i18n="footer.services_title">Services</h3>
                     <ul>
-                        <li><a href="#">Web Development</a></li>
-                        <li><a href="#">Mobile Apps</a></li>
-                        <li><a href="#">Software Solutions</a></li>
-                        <li><a href="#">UX/UI Design</a></li>
+                        <li><a href="#" data-i18n="footer.web">Web Development</a></li>
+                        <li><a href="#" data-i18n="footer.mobile">Mobile Apps</a></li>
+                        <li><a href="#" data-i18n="footer.software">Software Solutions</a></li>
+                        <li><a href="#" data-i18n="footer.design">UX/UI Design</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact</h3>
+                    <h3 data-i18n="footer.contact_title">Contact</h3>
                     <ul>
                         <li><a href="#">fandrycrea@gmail.com</a></li>
                         <li><a href="#">+261 34 68 158 93</a></li>
-                        <li><a href="#">Madagascar, Antananarivo</a></li>
+                        <li><a href="#" data-i18n="footer.location">Madagascar, Antananarivo</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2026 Fandry-Créa. Tous droits réservés. Designé avec <i class="fas fa-heart" style="color: #4f46e5;"></i></p>
+                <p data-i18n="footer.copyright">&copy; 2026 Fandry-Créa. Tous droits réservés. Designé avec <i class="fas fa-heart" style="color: #4f46e5;"></i></p>
             </div>
         </div>
     </footer>
-    <script src="asset/js/main.js"></script>
 
+    <script src="asset/js/main.js"></script>
 </body>
 </html>
